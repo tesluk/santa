@@ -7,6 +7,17 @@
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="IdProvider" IDEtalkID="96233E75BDED42CB03F17BCB1B7A82C8" />
+  <component name="IvyIDEA.ProjectSettings">
+    <option name="artifactTypeSettings">
+      <ArtifactTypeSettings />
+    </option>
+    <option name="propertiesSettings">
+      <PropertiesSettings />
+    </option>
+  </component>
+  <component name="IvyProjectSettings">
+    <dependencies />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
