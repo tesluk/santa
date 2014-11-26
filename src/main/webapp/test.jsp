@@ -10,10 +10,12 @@
 <body>
 <h1>Hello world!!!</h1>
 
+<img src="images/dog.jpg" height="400">
+
 <h3>Date=<%= new Date() %>
 </h3>
 
-<h3>Token=<%= UUID.randomUUID().toString().substring(0, 10)%>
+<h3>Token=<%= UUID.randomUUID().toString().substring(0, 8)%>
 </h3>
 
 </body>
