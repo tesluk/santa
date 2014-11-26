@@ -1,5 +1,9 @@
 package tab.os;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +18,12 @@ public class HelloWorld extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("<h1>Hello World!" + new Random().nextInt(5000)+"</h1>");
+
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        Session session = factory.openSession();
+
+        session.createQuery("from User").list();
+
+        resp.getWriter().println("<h1>Hello World!" + new Random().nextInt(5000) + "</h1>");
     }
 }
