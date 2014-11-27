@@ -4,7 +4,6 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/test</property>
@@ -13,10 +12,11 @@
 
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">usbw</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-        <!--<property name="show_sql">true</property>-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.autocommit">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
 
-        <mapping class="tab.os.entities.User" />
-        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <mapping class="tab.os.entities.User"/>
     </session-factory>
 </hibernate-configuration>
