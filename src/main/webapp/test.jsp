@@ -1,7 +1,10 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.util.UUID" %>
+<%@ page import="tab.os.tools.SantaCipher" %>
+<%@ page import="java.security.KeyPair" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Base64" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="java.util.Locale" %>
+<%@ page import="java.util.UUID" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 </head>
 
 <style>
-    h3:hover{
+    h3:hover {
         color: #EA0011;
     }
 </style>
@@ -19,13 +22,15 @@
 <body>
 <h1>Hello world!!!</h1>
 
-<img src="images/dog.jpg" height="400">
+<% KeyPair key = SantaCipher.generateKeyPair();
+    String privateKey = Base64.getEncoder().encodeToString(key.getPrivate().getEncoded());
+    String publicKey = Base64.getEncoder().encodeToString(key.getPublic().getEncoded());%>
 
-<h3>Date=<%= new SimpleDateFormat("dd-MMM-yy hh:mm:ss", Locale.US).format(new Date()) %>
-</h3>
+<p>Public=<%= publicKey %>
+</p>
 
-<h3>Token=<%= UUID.randomUUID().toString().substring(0, 8)%>
-</h3>
+<p>Private=<%= privateKey%>
+</p>
 
 </body>
 </html>
