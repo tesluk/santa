@@ -10,13 +10,16 @@
 </head>
 
 <style>
-    h3:hover {
+    p{
+        font-size: small;
+    }
+    p:hover {
         color: #EA0011;
+        font-size: small;
     }
 </style>
 
 <body>
-<h1>Hello world!!!</h1>
 
 <% KeyPair key = SantaCipher.generateKeyPair();
     String privateKey = Base64.encodeBase64String(key.getPrivate().getEncoded());
