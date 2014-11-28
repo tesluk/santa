@@ -22,6 +22,8 @@
 
 <body>
 
+<%--<img src="images/papers.jpg">--%>
+
 <% KeyPair key = SantaCipher.generateKeyPair();
     String privateKey = Base64.encodeBase64String(key.getPrivate().getEncoded());
     String publicKey = Base64.encodeBase64String(key.getPublic().getEncoded());%>

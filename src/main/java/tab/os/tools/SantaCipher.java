@@ -19,7 +19,8 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class SantaCipher {
 
-    private static final int KEY_LENGTH = 512;
+    private static final int KEY_LENGTH = 1024;
+    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
@@ -51,7 +52,7 @@ public class SantaCipher {
     }
 
     public static String encryptRSA(String text, PublicKey publicKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
-        Cipher cipher = Cipher.getInstance("RSA");
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, publicKey);
 
         ByteArrayInputStream bis = new ByteArrayInputStream(text.getBytes());
@@ -70,7 +71,7 @@ public class SantaCipher {
     }
 
     public static String decryptRSA(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
-        Cipher cipher = Cipher.getInstance("RSA");
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
 
         ByteArrayInputStream bis = new ByteArrayInputStream(Base64.decodeBase64(str));

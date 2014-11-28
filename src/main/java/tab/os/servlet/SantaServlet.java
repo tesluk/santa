@@ -30,8 +30,10 @@ public class SantaServlet extends HttpServlet {
             StringBuilder res = new StringBuilder();
             for (int i = 0; i < encryptedRows.length; i++) {
                 String decrypted = SantaCipher.decrypt(encryptedRows[i], myPrivateKey);
-                res.append(String.format("%d) %s  \n", i, decrypted));
+                res.append(String.format("<p>%d) %s  </p>\n", i, decrypted));
             }
+
+            resp.setContentType("text/html;charset=UTF-8");
             resp.getWriter().println(res.toString());
         } catch (Exception e) {
 //            resp.getWriter().println("Google 241543903");

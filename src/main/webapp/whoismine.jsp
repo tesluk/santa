@@ -8,9 +8,9 @@
 
 <body>
 <form method="post" action="/whoismine">
-    <textarea name="text" style="width: 300px; word-break: break-all"></textarea>
+    <textarea name="text" style="width: 90%; word-break: break-all"></textarea>
     <br>
-    <input type="text" name="key" style="width: 300px" placeholder="your private key..."/>
+    <textarea name="key" style="width: 90%; word-break: break-all" placeholder="your private key..."></textarea>
     <br>
     <input type="submit">
 </form>
