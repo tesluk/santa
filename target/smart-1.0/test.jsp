@@ -10,12 +10,13 @@
 </head>
 
 <style>
-    p{
-        font-size: small;
+    p {
+        width: 400px;
+        word-break: break-all;
     }
+
     p:hover {
         color: #EA0011;
-        font-size: small;
     }
 </style>
 
@@ -25,10 +26,14 @@
     String privateKey = Base64.encodeBase64String(key.getPrivate().getEncoded());
     String publicKey = Base64.encodeBase64String(key.getPublic().getEncoded());%>
 
-<p>Public=<%= publicKey %>
+<h3>Public</h3>
+
+<p><%= publicKey %>
 </p>
 
-<p>Private=<%= privateKey%>
+<h3>Private</h3>
+
+<p><%= privateKey%>
 </p>
 
 </body>

@@ -5,6 +5,7 @@
       <change type="DELETED" beforePath="C:\Users\andrey.tesluk\WorkSpace\TmpWorkSpace\openShift\.idea\libraries\Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\andrey.tesluk\WorkSpace\TmpWorkSpace\openShift\.idea\libraries\Maven__org_postgresql_postgresql_9_2_1003_jdbc4.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="openShift.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +51,8 @@
       <file leaf-file-name="test.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36798337" vertical-offset="44" max-vertical-offset="697">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.5301455" vertical-offset="221" max-vertical-offset="782">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -808,12 +809,12 @@
       <updated>1416874960211</updated>
       <workItem from="1416874965915" duration="850000" />
       <workItem from="1416906002062" duration="22180000" />
-      <workItem from="1417180027770" duration="4164000" />
+      <workItem from="1417180027770" duration="4673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27194000" />
+    <option name="totallyTimeSpent" value="27703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1114,8 +1115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36798337" vertical-offset="44" max-vertical-offset="697">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.5301455" vertical-offset="221" max-vertical-offset="782">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
