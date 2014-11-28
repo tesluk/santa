@@ -34,7 +34,8 @@ public class SantaServlet extends HttpServlet {
             }
             resp.getWriter().println(res.toString());
         } catch (Exception e) {
-            resp.getWriter().println("Google 241543903");
+//            resp.getWriter().println("Google 241543903");
+            resp.getWriter().println(e.getMessage());
         }
     }
 }
