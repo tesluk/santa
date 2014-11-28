@@ -1,5 +1,7 @@
 package tab.os.tools;
 
+import org.apache.commons.codec.binary.Base64;
+
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.CipherOutputStream;
@@ -11,7 +13,6 @@ import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Base64;
 
 /**
  * Created by andrey.tesluk on 12.11.2014.
@@ -28,14 +29,14 @@ public class SantaCipher {
     }
 
     public static PublicKey parsePublicKey(String keyInBase64) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        byte[] bKey = Base64.getDecoder().decode(keyInBase64);
+        byte[] bKey = Base64.decodeBase64(keyInBase64);
         KeyFactory factory = KeyFactory.getInstance("RSA");
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(bKey);
         return factory.generatePublic(keySpec);
     }
 
     public static PrivateKey parsePrivateKey(String keyInBase64) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        byte[] bKey = Base64.getDecoder().decode(keyInBase64);
+        byte[] bKey = Base64.decodeBase64(keyInBase64);
         KeyFactory factory = KeyFactory.getInstance("RSA");
         PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(bKey);
         return factory.generatePrivate(spec);
@@ -65,14 +66,14 @@ public class SantaCipher {
         bis.close();
         cos.close();
 
-        return Base64.getEncoder().encodeToString(bos.toByteArray());
+        return Base64.encodeBase64String(bos.toByteArray());
     }
 
     public static String decryptRSA(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
 
-        ByteArrayInputStream bis = new ByteArrayInputStream(Base64.getDecoder().decode(str));
+        ByteArrayInputStream bis = new ByteArrayInputStream(Base64.decodeBase64(str));
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         CipherInputStream cis = new CipherInputStream(bis, cipher);
 

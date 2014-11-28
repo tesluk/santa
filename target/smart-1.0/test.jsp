@@ -1,10 +1,6 @@
 <%@ page import="tab.os.tools.SantaCipher" %>
 <%@ page import="java.security.KeyPair" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Base64" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.util.Locale" %>
-<%@ page import="java.util.UUID" %>
+<%@ page import="org.apache.commons.codec.binary.Base64" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,8 +19,8 @@
 <h1>Hello world!!!</h1>
 
 <% KeyPair key = SantaCipher.generateKeyPair();
-    String privateKey = Base64.getEncoder().encodeToString(key.getPrivate().getEncoded());
-    String publicKey = Base64.getEncoder().encodeToString(key.getPublic().getEncoded());%>
+    String privateKey = Base64.encodeBase64String(key.getPrivate().getEncoded());
+    String publicKey = Base64.encodeBase64String(key.getPublic().getEncoded());%>
 
 <p>Public=<%= publicKey %>
 </p>

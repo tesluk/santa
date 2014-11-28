@@ -8,6 +8,7 @@
           <element id="module-output" name="openShift" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-server:2.13" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.13" />
           <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" />
