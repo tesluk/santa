@@ -1,8 +1,6 @@
 package tab.os.servlet;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import tab.os.entities.User;
 import tab.os.tools.DBSession;
 
@@ -19,8 +17,6 @@ import java.util.Random;
  * Created by Tab on 25.11.2014.
  */
 public class HelloWorld extends HttpServlet {
-
-    private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

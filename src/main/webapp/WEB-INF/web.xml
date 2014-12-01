@@ -15,7 +15,7 @@
         <servlet-name>HelloWorld</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>Santa</servlet-name>
         <servlet-class>tab.os.servlet.SantaServlet</servlet-class>
@@ -33,11 +33,12 @@
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>tab.os.rest</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     
     <servlet-mapping>
         <servlet-name>jersey-servlet</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <url-pattern>/santa/*</url-pattern>
     </servlet-mapping>
     
 </web-app>

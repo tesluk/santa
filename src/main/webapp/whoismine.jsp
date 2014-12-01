@@ -1,3 +1,7 @@
+<%@ page import="org.hibernate.Session" %>
+<%@ page import="tab.os.tools.DBSession" %>
+<%@ page import="java.util.List" %>
+<%@ page import="tab.os.entities.ShuffleResult" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,9 +11,27 @@
 </head>
 
 <body>
-<form method="post" action="/whoismine">
-    <textarea name="text" style="width: 90%; word-break: break-all"></textarea>
-    <br>
+<%
+    Session dbses = DBSession.getSession();
+    List<ShuffleResult> results = dbses.createCriteria(ShuffleResult.class).list();
+%>
+
+<a href="santa.jsp">-Back-</a>
+
+<table border="0">
+    <th>
+    <td>Pulic key</td>
+    </th>
+    <% for (ShuffleResult res : results) {%>
+    <tr>
+        <td><%=res.getValue()%>
+        </td>
+    </tr>
+
+    <%} %>
+</table>
+
+<form method="post" action="/santa/whoismine">
     <textarea name="key" style="width: 90%; word-break: break-all" placeholder="your private key..."></textarea>
     <br>
     <input type="submit">
