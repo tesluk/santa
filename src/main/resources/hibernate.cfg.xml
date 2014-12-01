@@ -7,7 +7,7 @@
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 
-        <property name="hibernate.connection.url">jdbc:mysql://smart-basata.rhcloud.com:3306/smart?autoReconnect=true&amp;useUnicode=true&amp;createDatabaseIfNotExist=true&amp;characterEncoding=utf-8</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.12.221.130:3306/smart?autoReconnect=true&amp;useUnicode=true&amp;createDatabaseIfNotExist=true&amp;characterEncoding=utf-8</property>
         <property name="hibernate.connection.username">admine16phzN</property>
         <property name="hibernate.connection.password">KDRzs_IiPqI1</property>
 
