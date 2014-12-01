@@ -27,7 +27,7 @@
 
 <a href="santa.jsp">-Back-</a>
 
-<%--<img src="images/papers.jpg">--%>
+<img src="images/papers.jpg">
 
 <% Session dbses = DBSession.getSession();
     List<HappyUser> users = dbses.createCriteria(HappyUser.class).list();%>

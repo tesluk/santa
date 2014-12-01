@@ -8,7 +8,7 @@
 
 <body>
 
-<%--<img src="images/papers.jpg">--%>
+<img src="images/papers.jpg">
 <br>
 <a href="keys.jsp">I need a key</a><br>
 <a href="list.jsp">All happy users</a><br>

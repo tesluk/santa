@@ -24,7 +24,7 @@
 
 <a href="santa.jsp">-Back-</a>
 
-<%--<img src="images/papers.jpg">--%>
+<img src="images/papers.jpg">
 
 <% KeyPair key = SantaCipher.generateKeyPair();
     String privateKey = Base64.encodeBase64String(key.getPrivate().getEncoded());
