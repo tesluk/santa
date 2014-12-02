@@ -52,10 +52,21 @@ public class SantaCipher {
     }
 
     public static String encryptRSA(String text, PublicKey publicKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
+        int partSize = 12;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < text.length(); i += partSize) {
+            String tmp = text.substring(i, (i + partSize) > text.length() ? text.length() : (i + partSize));
+            tmp = encryptPart(tmp, publicKey);
+            builder.append(tmp).append(";");
+        }
+        return builder.toString();
+    }
+
+    private static String encryptPart(String string, PublicKey publicKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IOException {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, publicKey);
 
-        ByteArrayInputStream bis = new ByteArrayInputStream(text.getBytes());
+        ByteArrayInputStream bis = new ByteArrayInputStream(string.getBytes());
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         CipherOutputStream cos = new CipherOutputStream(bos, cipher);
 
@@ -71,6 +82,15 @@ public class SantaCipher {
     }
 
     public static String decryptRSA(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
+        String[] parts = str.split(";");
+        StringBuilder builder = new StringBuilder();
+        for (String part : parts) {
+            builder.append(decryptPart(part, privateKey));
+        }
+        return builder.toString();
+    }
+
+    public static String decryptPart(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
 
@@ -89,5 +109,17 @@ public class SantaCipher {
         return new String(bos.toByteArray());
     }
 
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, NoSuchPaddingException, IOException {
+        KeyPair key = generateKeyPair();
+
+        String text = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
+                "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
+                "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+
+        String enc = encryptRSA(text, key.getPublic());
+        System.out.println(enc);
+        String dec = decryptRSA(enc, key.getPrivate());
+        System.out.println(dec);
+    }
 
 }

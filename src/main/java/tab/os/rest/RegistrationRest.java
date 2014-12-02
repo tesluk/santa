@@ -97,6 +97,7 @@ public class RegistrationRest {
         if (!pass.equals("t14v0k3_")) {
             return Response.status(403).entity("Access forbidden").build();
         }
+        System.out.println("Start shuffle");
         Session session = DBSession.getSession();
         List<HappyUser> users = session.createQuery("FROM HappyUser E WHERE E.publicKey != NULL").list();
 
