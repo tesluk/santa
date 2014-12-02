@@ -19,9 +19,9 @@
 <a href="santa.jsp">-Back-</a>
 
 <table border="0">
-    <th>
-    <td>Pulic key</td>
-    </th>
+    <tr>
+    <th>Encrypted value</th>
+    </tr>
     <% for (ShuffleResult res : results) {%>
     <tr>
         <td><%=res.getValue()%>
