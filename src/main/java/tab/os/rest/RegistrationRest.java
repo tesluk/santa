@@ -68,13 +68,18 @@ public class RegistrationRest {
     @POST
     @Path("/whoismine")
     public Response whoIsMine(@FormParam("key") String prKey) {
+        StringBuilder res = new StringBuilder();
         try {
             Session session = DBSession.getSession();
             List<ShuffleResult> results = session.createCriteria(ShuffleResult.class).list();
             System.out.println("Result size: " + results.size());
-            StringBuilder res = new StringBuilder();
             for (int i = 0; i < results.size(); i++) {
-                String decrypted = SantaCipher.decrypt(results.get(i).getValue(), prKey);
+                String decrypted = "";
+                try {
+                    SantaCipher.decrypt(results.get(i).getValue(), prKey);
+                } catch (Exception e) {
+                    decrypted = e.getMessage();
+                }
                 System.out.println(i + " " + decrypted);
                 res.append(String.format("<p>%d) %s  </p>\n", i, decrypted));
             }
