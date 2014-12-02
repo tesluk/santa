@@ -20,9 +20,9 @@ import java.security.spec.X509EncodedKeySpec;
 public class SantaCipher {
 
     private static final int KEY_LENGTH = 1024;
-//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
-    private static final String ALGORITHM = "RSA/ECB/PKCS1Padding";
-//    private static final String ALGORITHM = "RSA/ECB/NoPadding";
+    //    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+//    private static final String ALGORITHM = "RSA/ECB/PKCS1Padding";
+    private static final String ALGORITHM = "RSA/ECB/NoPadding";
 //    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
@@ -88,7 +88,7 @@ public class SantaCipher {
         String[] parts = str.split(";");
         StringBuilder builder = new StringBuilder();
         for (String part : parts) {
-            builder.append(decryptPart(part, privateKey));
+            builder.append(decryptPart(part, privateKey).trim());
         }
         return builder.toString();
     }
@@ -114,6 +114,9 @@ public class SantaCipher {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, NoSuchPaddingException, IOException {
         KeyPair key = generateKeyPair();
+
+        System.out.println(Base64.encodeBase64String(key.getPrivate().getEncoded()));
+        System.out.println(Base64.encodeBase64String(key.getPublic().getEncoded()));
 
         String text = "a12312312312331231231231231231231231233123123123123123123123123312312312312312312312312331231231231231231231231233123123123123" +
                 "1231231231233123123123123123123123123312312312312312312312312331231231231231231231231233123123123123a";
