@@ -76,7 +76,7 @@ public class SantaCipher {
         CipherOutputStream cos = new CipherOutputStream(bos, cipher);
 
         int c;
-        byte[] buf = new byte[32];
+        byte[] buf = new byte[(KEY_LENGTH / 8) - 11];
         while ((c = bis.read(buf)) != -1) {
             cos.write(buf, 0, c);
         }
@@ -105,7 +105,7 @@ public class SantaCipher {
         CipherInputStream cis = new CipherInputStream(bis, cipher);
 
         int c;
-        byte[] buf = new byte[32];
+        byte[] buf = new byte[(KEY_LENGTH / 8) - 11];
         while ((c = cis.read(buf)) != -1) {
             bos.write(buf, 0, c);
         }
@@ -127,6 +127,22 @@ public class SantaCipher {
         System.out.println(enc);
         String dec = decryptRSA(enc, key.getPrivate());
         System.out.println(dec);
+
+
+        String priv = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJMznOkmrN4ucDCpBjbqQDk9wJY1rQh057X5l9aLtX3ESSq8Kb3z8l7UKbKlmXTX0ElB//SXB9U4UEB4QsX7puHe/NRqmFmgicwcaViDxs5X6GVawG0kM4MC9DQ8KgAsIjZoMqkr4fuJijsAyW+tzvIyOnTBvy7Soq7S5w3V6uc3AgMBAAECgYBpgoJDAAzCiKizyEODEy8LmH61bC3ltN3tKsUx7Bwf1JTZQ9vrorKkVBC7U0WGYbaS+/K535OmumGThF/gRzva7krKnc1myV/ZRYB8Tw02kG2Q2PUl5UEFjzKrx1Y+YrlGPO8ffxmkBPfSWyUSgAMjl4fHPEmcifkzYS6h4ziD6QJBAMR3UmF6kgsNicaptjI/3suDPI8clxf6FzYBeafEhr6XTFOWIm9fKWDpT7BqCktYhO3rtaijbzAacC2v/MuD/+0CQQC/zqS91uRe2T5z7izzXTyWYj4E7AB/sA0ktuWIwtnjTUBLMv2J7RQj9B+hnrfWlkFZdLXdrLpjmxlJGUA2zzczAkEAgTg+DfFRV0W7RdhgBqLtxgt2bGaQlmuekp3bx1XCjl7zC9MmqPv9OkmaaV0FklMRc29iFx4PxqLM/6/N5InYbQJBAIVEb6RTTcM1EDZ+cw74ZiNayRqkW0hcqxUqWtsl/zv2LcjR+eU+KzM76EpkO/lF1svv0njeDXctiWkHuV0bpo8CQCqrY12H2C1dhLuZlR+4HKXF/UXSdsc/kZION/OfcHIuDI4kfmfn+N+FsgXQzJ0hxXIKho+dfMgbah4L1cdHu0w=";
+//        String et = "CWeMkKCTAwhXoxLRYsTQ9hMHjd8xrRWzMrUMM53dgWEuwOHdy0VaxY/bx9KSYPHVcrGAPAtBSQx442nfdL4NbV0nwk0shB7aZeHWARZxvkyio9hVzAAjDwwtX+rRVM58o5lgLs0VctmYepfNbW66OxZbPt5obFk2anQ9wXonQRE=";
+//        String et = "Be4MF9GgqNBW+d/fm8Ai23eOuOvxbw7JUespqg30Bx2dhVkTFwFXvu6mzdCgPUC9B06eXSGlgX2Wos1tN2e3tYJM/wVvueDRU0ZZz5VoL/2VHv6zqhedgdVZhts7rgatWmhYODGz5s3aQYx0Rk9l48mHhqTpCKuTShmnzQeRomI=";
+//        String et = "mobU04OPHJgvKZswFfT2s6K+xYEgupAoZy4SARZkgUnTsUUFFBSRl1BHLIAXDjuf01YYKGjmhcYfE/hheddDGKuBXYguykaeAqpY3hKoQh8q2Tcd+jR7C/LgdF86q5S3Cp5HPT0GIW5awDAuJ8jjSb25lkDbMIEgD2sAmF5+nWE=";
+//        String et = "dgS05vaRLkJxiLrbfcisMx9x/bDYiB5bLYrO/lUW4J3uqnGMMGT5K4zw6iP7ssbOkNIq63je2s3Id3ka8s6Tz1qXuPJCpvhQuw1bHRtVYDeCHteANpusu6fVym6pBJja+b3R5LMn4Ezm+ie3/lrk0Ot/hLJOcTGKjPQnIRqd/JE=";
+//        String et = "TSfhxV2JAyY2eH7h0ZlbhcSUT8wl9ubn8+EXkm0hOPYdT/KqrFHLqaFpS81gIYvagnFBCTdvuOU3XFZH4xuUSpTMy0KXFz/Hyay/ZokrEAclYkiO+xst8xsZefglr8LFKtc4KstqHRJ3qT6IrV1cde8lVKp/ECw23SaXuvK2KYU=";
+//        String et = "L4zplfysERtcwhRTAKVGuA9CkN7f5YiFV5GFeaQLw+fH8tX4tjab/zhD1dChMkzB0E1qzF35XAX8R/5AQvTixzPSO1dNpqlOJ7KAg5hmyrJqWziIhG62UX45UDGDcDZOchU9BLGRTPaprI78SqQfSX7C2iCeZmlYEVbU+ViTFvE=";
+//        String et = "FVJYX4tJENMd0Zo8cgx/1w/2oacFhsEMXcSxYH+QU/nJC8ypH6bfYf2m6zzaeocC2Y+074Dgk9IEaiz+i78l7oypfJD3HzPBKZwKqf3ar6cjjOiVw72M+dnzTO00bkIeiVrukTqb5mH5hMF8JZgHe7hR3OL/wjvBMgQwHNdNkWg=";
+//        String et = "oBytT8mroHplMeYG38jW+2Z0tPSMQKDBQLTe20WU7rgroC1CBAVNtEiTSd5KcgfqC+0cTzkZ0YZVLX089Y0cUwkOffRbv51lQHptkOPrl1dZmXk8UJlee9LxVeuEOAv9vW9JTHoS2uvaCFhWBeXPE9R3Hy5Zub07497GfI5kQGc=";
+        String et = "TYS1uxVIiVcy9AW1g2m4yMi1FGf7Fh6lVIQWG9IG9kIWp6Uiribp93EmlTYW83CXQlcj8FjaiNoz6fqOHvFaEuo6mv3MqMBGcXRjOBmmQYW/p/dxaf7K8HQ5a9DqNGVeYujVVTXCUOBZNvsidgyTPY9LzKUUs3LJ0LLT7oDPiuI=";
+
+
+        System.out.println(decrypt(et, priv));
+
     }
 
 }
