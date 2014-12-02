@@ -1,9 +1,6 @@
 package tab.os.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by andrey.tesluk on 01.12.2014.
@@ -13,7 +10,8 @@ import javax.persistence.Table;
 public class ShuffleResult {
 
     @Id
-    private long id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
 
     @Column(columnDefinition="TEXT")
     private String value;
@@ -25,12 +23,12 @@ public class ShuffleResult {
     public ShuffleResult() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(int id) {
+        s
     }
 
     public String getValue() {
