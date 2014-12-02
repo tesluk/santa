@@ -13,7 +13,9 @@ import javax.persistence.Table;
 public class ShuffleResult {
 
     @Id
-    @Column(length = 20480)
+    private long id;
+
+    @Column(columnDefinition="TEXT")
     private String value;
 
     public ShuffleResult(String str) {
@@ -21,6 +23,14 @@ public class ShuffleResult {
     }
 
     public ShuffleResult() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getValue() {
