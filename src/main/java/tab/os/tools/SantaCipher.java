@@ -20,8 +20,8 @@ import java.security.spec.X509EncodedKeySpec;
 public class SantaCipher {
 
     private static final int KEY_LENGTH = 1024;
-//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
-    private static final String ALGORITHM = "RSA/ECB/NoPadding";
+    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
+//    private static final String ALGORITHM = "RSA/ECB/NoPadding";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
@@ -113,9 +113,7 @@ public class SantaCipher {
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, NoSuchPaddingException, IOException {
         KeyPair key = generateKeyPair();
 
-        String text = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
-                "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
-                "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+        String text = "1231231231233123123123123";
 
         String enc = encryptRSA(text, key.getPublic());
         System.out.println(enc);
