@@ -28,7 +28,7 @@ public class ShuffleResult {
     }
 
     public void setId(int id) {
-        s
+        this.id = id;
     }
 
     public String getValue() {
