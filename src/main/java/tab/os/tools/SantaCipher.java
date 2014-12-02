@@ -23,7 +23,8 @@ public class SantaCipher {
     //    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
 //    private static final String ALGORITHM = "RSA/ECB/PKCS1Padding";
 //    private static final String ALGORITHM = "RSA/ECB/NoPadding";
-    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
+//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
+    private static final String ALGORITHM = "RSA";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
