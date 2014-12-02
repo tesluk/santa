@@ -76,7 +76,7 @@ public class RegistrationRest {
             for (int i = 0; i < results.size(); i++) {
                 String decrypted = "";
                 try {
-                    SantaCipher.decrypt(results.get(i).getValue(), prKey);
+                    decrypted = SantaCipher.decrypt(results.get(i).getValue(), prKey);
                 } catch (Exception e) {
                     decrypted = e.getMessage();
                 }
