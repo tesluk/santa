@@ -118,7 +118,12 @@ public class RegistrationRest {
             transaction.commit();
 
         } catch (Exception e) {
-            return Response.status(500).entity("Server error: " + e.getMessage()).build();
+            StackTraceElement[] trace = e.getStackTrace();
+            StringBuilder builder = new StringBuilder();
+            for (StackTraceElement elem : trace) {
+                builder.append(elem.toString()).append("<br>\n");
+            }
+            return Response.status(500).entity("Server error: " + e.getMessage() + "<br>\n" + builder.toString()).build();
         }
         return Response.status(301).header(HttpHeaders.LOCATION, "/whoismine.jsp").build();
     }
