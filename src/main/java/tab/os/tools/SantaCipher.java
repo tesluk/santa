@@ -20,9 +20,9 @@ import java.security.spec.X509EncodedKeySpec;
 public class SantaCipher {
 
     private static final int KEY_LENGTH = 1024;
-//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
 //    private static final String ALGORITHM = "RSA/ECB/NoPadding";
-    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
+//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
