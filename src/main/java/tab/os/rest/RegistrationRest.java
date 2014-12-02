@@ -80,7 +80,12 @@ public class RegistrationRest {
             }
             return Response.ok(res.toString()).build();
         } catch (Exception e) {
-            return Response.status(400).entity("Error: " + e.getMessage()).build();
+            StackTraceElement[] trace = e.getStackTrace();
+            StringBuilder builder = new StringBuilder();
+            for (StackTraceElement elem : trace) {
+                builder.append(elem.toString()).append("<br>\n");
+            }
+            return Response.status(400).entity("Error: " + e.getMessage() + "<br>\n" + builder.toString()).build();
         }
     }
 
