@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class ShuffleResult {
 
     @Id
-    @Column(columnDefinition="TEXT")
+    @Column(length = 20480)
     private String value;
 
     public ShuffleResult(String str) {
