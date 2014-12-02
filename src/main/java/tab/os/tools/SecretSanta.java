@@ -41,7 +41,7 @@ public class SecretSanta {
             keys.add(SantaCipher.parsePublicKey(from.get(i).getPublicKey()));
         }
 
-        names = addRandomPart(names);
+//        names = addRandomPart(names);
 
         List<String> res = new ArrayList<String>();
         for (int i = 0; i < names.size(); i++) {
@@ -76,30 +76,30 @@ public class SecretSanta {
         return res;
     }
 
-    private static List<String> addRandomPart(List<String> names) {
-        int max = 0;
-        for (String name : names) {
-            max = max < name.length() ? name.length() : max;
-        }
-        max *= 2;
-
-        List<String> res = new ArrayList<String>();
-        for (String name : names) {
-            res.add(addRandomPart(name, max));
-        }
-        return res;
-    }
-
-    private static String addRandomPart(String name, int size) {
-        name = "_" + name + "_";
-        while (name.length() < size) {
-            if (random.nextBoolean()) {
-                name = name + random.nextInt(10);
-            } else {
-                name = random.nextInt(10) + name;
-            }
-        }
-        return name;
-    }
+//    private static List<String> addRandomPart(List<String> names) {
+//        int max = 0;
+//        for (String name : names) {
+//            max = max < name.length() ? name.length() : max;
+//        }
+//        max *= 2;
+//
+//        List<String> res = new ArrayList<String>();
+//        for (String name : names) {
+//            res.add(addRandomPart(name, max));
+//        }
+//        return res;
+//    }
+//
+//    private static String addRandomPart(String name, int size) {
+//        name = "_" + name + "_";
+//        while (name.length() < size) {
+//            if (random.nextBoolean()) {
+//                name = name + random.nextInt(10);
+//            } else {
+//                name = random.nextInt(10) + name;
+//            }
+//        }
+//        return name;
+//    }
 
 }
