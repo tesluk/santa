@@ -20,7 +20,8 @@ import java.security.spec.X509EncodedKeySpec;
 public class SantaCipher {
 
     private static final int KEY_LENGTH = 1024;
-    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+//    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+    private static final String ALGORITHM = "RSA/ECB/PKCS1Padding";
 //    private static final String ALGORITHM = "RSA/ECB/NoPadding";
 //    private static final String ALGORITHM = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
 
@@ -83,7 +84,7 @@ public class SantaCipher {
         return Base64.encodeBase64String(bos.toByteArray());
     }
 
-    public static String decryptRSA(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
+    private static String decryptRSA(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
         String[] parts = str.split(";");
         StringBuilder builder = new StringBuilder();
         for (String part : parts) {
@@ -92,7 +93,7 @@ public class SantaCipher {
         return builder.toString();
     }
 
-    public static String decryptPart(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
+    private static String decryptPart(String str, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IOException {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
 
