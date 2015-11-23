@@ -1,4 +1,4 @@
-package tab.os.tools;
+package tab.os.santa.tools;
 
 import org.apache.commons.codec.binary.Base64;
 

@@ -1,4 +1,4 @@
-package tab.os.tools;
+package tab.os.db;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

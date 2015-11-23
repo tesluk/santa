@@ -1,10 +1,10 @@
-<%@ page import="tab.os.tools.SantaCipher" %>
+<%@ page import="tab.os.santa.tools.SantaCipher" %>
 <%@ page import="java.security.KeyPair" %>
 <%@ page import="org.apache.commons.codec.binary.Base64" %>
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="tab.os.tools.DBSession" %>
+<%@ page import="tab.os.db.DBSession" %>
 <%@ page import="java.util.List" %>
-<%@ page import="tab.os.entities.HappyUser" %>
+<%@ page import="tab.os.santa.entities.HappyUser" %>
 <!doctype html>
 <html lang="en">
 <head>

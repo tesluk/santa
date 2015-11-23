@@ -1,6 +1,6 @@
-package tab.os.servlet;
+package tab.os.santa.servlet;
 
-import tab.os.tools.SantaCipher;
+import tab.os.santa.tools.SantaCipher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

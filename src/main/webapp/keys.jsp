@@ -1,4 +1,4 @@
-<%@ page import="tab.os.tools.SantaCipher" %>
+<%@ page import="tab.os.santa.tools.SantaCipher" %>
 <%@ page import="java.security.KeyPair" %>
 <%@ page import="org.apache.commons.codec.binary.Base64" %>
 <!doctype html>

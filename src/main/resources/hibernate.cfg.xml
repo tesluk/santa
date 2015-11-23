@@ -25,8 +25,11 @@
 
         <property name="show_sql">true</property>
 
-        <mapping class="tab.os.entities.User"/>
-        <mapping class="tab.os.entities.HappyUser"/>
-        <mapping class="tab.os.entities.ShuffleResult"/>
+        <mapping class="tab.os.santa.entities.User"/>
+        <mapping class="tab.os.santa.entities.HappyUser"/>
+        <mapping class="tab.os.santa.entities.ShuffleResult"/>
+
+        <mapping class="tab.os.smart.room.entities.Tool"/>
+        <mapping class="tab.os.smart.room.entities.Indication"/>
     </session-factory>
 </hibernate-configuration>

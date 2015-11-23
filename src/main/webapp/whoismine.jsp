@@ -1,7 +1,7 @@
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="tab.os.tools.DBSession" %>
+<%@ page import="tab.os.db.DBSession" %>
 <%@ page import="java.util.List" %>
-<%@ page import="tab.os.entities.ShuffleResult" %>
+<%@ page import="tab.os.santa.entities.ShuffleResult" %>
 <!doctype html>
 <html lang="en">
 <head>

@@ -1,4 +1,4 @@
-package tab.os.rest;
+package tab.os.santa.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

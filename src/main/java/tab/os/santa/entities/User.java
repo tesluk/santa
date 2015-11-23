@@ -1,4 +1,4 @@
-package tab.os.entities;
+package tab.os.santa.entities;
 
 import javax.persistence.*;
 

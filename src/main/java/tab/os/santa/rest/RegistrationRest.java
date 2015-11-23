@@ -1,12 +1,12 @@
-package tab.os.rest;
+package tab.os.santa.rest;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import tab.os.entities.HappyUser;
-import tab.os.entities.ShuffleResult;
-import tab.os.tools.DBSession;
-import tab.os.tools.SantaCipher;
-import tab.os.tools.SecretSanta;
+import tab.os.santa.entities.HappyUser;
+import tab.os.santa.entities.ShuffleResult;
+import tab.os.db.DBSession;
+import tab.os.santa.tools.SantaCipher;
+import tab.os.santa.tools.SecretSanta;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;

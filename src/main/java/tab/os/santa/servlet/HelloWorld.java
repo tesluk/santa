@@ -1,8 +1,8 @@
-package tab.os.servlet;
+package tab.os.santa.servlet;
 
 import org.hibernate.Session;
-import tab.os.entities.User;
-import tab.os.tools.DBSession;
+import tab.os.santa.entities.User;
+import tab.os.db.DBSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

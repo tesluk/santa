@@ -1,6 +1,6 @@
-package tab.os.tools;
+package tab.os.santa.tools;
 
-import tab.os.entities.HappyUser;
+import tab.os.santa.entities.HappyUser;
 
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
@@ -18,15 +18,17 @@ public class SecretSanta {
     private static List<Set> pairs = new ArrayList<Set>();
 
     static {
-        pairs.add(new HashSet(Arrays.asList("Andrew Tesluk", "Tanya Tesluk")));
-        pairs.add(new HashSet(Arrays.asList("Eugenia Gritsenko", "Bogdan Potapskyy")));
-        pairs.add(new HashSet(Arrays.asList("Alexandra Usova", "Andrey Usov")));
-        pairs.add(new HashSet(Arrays.asList("Vladislav Stepanov", "Anastasia Smakovska ")));
+        pairs.add(new HashSet(Arrays.asList("Alexander Davydov", "Rita Davydova")));
+        pairs.add(new HashSet(Arrays.asList("Andrew Tesliuk", "Tania Tesliuk")));
+        pairs.add(new HashSet(Arrays.asList("Bohdan Potapskyi", "Eugenia Potapska")));
+        pairs.add(new HashSet(Arrays.asList("Olha Mykhailenko", "Serhii Skyrda")));
     }
 
     private static Random random = new Random();
 
-    public static List<String> get(List<HappyUser> users) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IOException {
+    public static List<String> get(List<HappyUser> users)
+        throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException,
+        InvalidKeyException, IOException {
         List<HappyUser> from = users, to = users;
         while (!validate(from, to)) {
             from = shuffle(from);
@@ -41,7 +43,7 @@ public class SecretSanta {
             keys.add(SantaCipher.parsePublicKey(from.get(i).getPublicKey()));
         }
 
-//        names = addRandomPart(names);
+        //        names = addRandomPart(names);
 
         List<String> res = new ArrayList<String>();
         for (int i = 0; i < names.size(); i++) {
@@ -58,7 +60,9 @@ public class SecretSanta {
             }
             for (Set pair : pairs) {
                 if (pair.contains(from.get(i).getName()) && pair.contains(to.get(i).getName())) {
-                    System.out.println(String.format("Conflict pair: %s & %s", from.get(i).getName(), to.get(i).getName()));
+                    System.out.println(String
+                        .format("Conflict pair: %s & %s", from.get(i).getName(),
+                            to.get(i).getName()));
                     return false;
                 }
             }
@@ -75,31 +79,4 @@ public class SecretSanta {
         }
         return res;
     }
-
-//    private static List<String> addRandomPart(List<String> names) {
-//        int max = 0;
-//        for (String name : names) {
-//            max = max < name.length() ? name.length() : max;
-//        }
-//        max *= 2;
-//
-//        List<String> res = new ArrayList<String>();
-//        for (String name : names) {
-//            res.add(addRandomPart(name, max));
-//        }
-//        return res;
-//    }
-//
-//    private static String addRandomPart(String name, int size) {
-//        name = "_" + name + "_";
-//        while (name.length() < size) {
-//            if (random.nextBoolean()) {
-//                name = name + random.nextInt(10);
-//            } else {
-//                name = random.nextInt(10) + name;
-//            }
-//        }
-//        return name;
-//    }
-
 }
