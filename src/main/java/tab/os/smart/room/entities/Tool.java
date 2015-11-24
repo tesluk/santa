@@ -1,7 +1,5 @@
 package tab.os.smart.room.entities;
 
-import sun.misc.Contended;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,7 +11,7 @@ import java.util.List;
 public class Tool {
 
     @Id
-    @Contended("tool_id")
+    //@Contended("tool_id")
     private String id;
 
     private String pass;
