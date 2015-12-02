@@ -15,6 +15,7 @@
 <body>
 <div class="content" align="middle">
     <div class="clock" style="margin:2em;"></div>
+    <div class="clock_now" style="margin:2em;"></div>
 </div>
 
 <script type="text/javascript">
@@ -25,7 +26,7 @@
 
         var date = new Date(Date.UTC(2015, 11, 6, 12, 0, 0));
         var now = new Date();
-        var diff = date.getTime() / 1000 - now.getTime() / 1000;
+        var diff = date.getTime() / 1000 - now.getTime() / 1000 - 2 * 60 * 60;
 
         clock = $('.clock').FlipClock(diff, {
             countdown: true
