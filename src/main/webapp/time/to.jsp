@@ -13,9 +13,11 @@
     <script src="/js/flipclock.js"></script>
 </head>
 <body>
-<div class="content" align="middle">
-    <div class="clock" style="margin:2em;"></div>
-    <div class="clock_now" style="margin:2em;"></div>
+<div class="content" style="text-align: center; padding: 30px">
+    <img src="/images/partyDEC6.jpg">
+</div>
+<div class="content" style="text-align: center">
+    <div class="clock" style="display: inline-block; width: 470px"></div>
 </div>
 
 <script type="text/javascript">
