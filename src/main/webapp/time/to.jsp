@@ -22,7 +22,7 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2016, 8, 30, 12, 0, 0));
+        var date = new Date(Date.UTC(2015, 12, 6, 12, 0, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000;
 
