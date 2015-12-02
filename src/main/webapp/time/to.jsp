@@ -13,8 +13,9 @@
     <script src="/js/flipclock.js"></script>
 </head>
 <body>
-<div class="clock" style="margin:2em;"></div>
-<div class="message"></div>
+<div class="content" align="middle">
+    <div class="clock" style="margin:2em;"></div>
+</div>
 
 <script type="text/javascript">
     var clock;
@@ -22,12 +23,11 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2015, 12, 6, 12, 0, 0));
+        var date = new Date(Date.UTC(2015, 11, 6, 12, 0, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000;
 
         clock = $('.clock').FlipClock(diff, {
-            clockFace: 'DailyCounter',
             countdown: true
         });
 
