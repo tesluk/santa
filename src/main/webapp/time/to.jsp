@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="content" style="text-align: center; padding: 30px">
-    <img src="/images/partyDEC6.jpg">
+    <img src="/images/partyDEC6.png">
 </div>
 <div class="content" style="text-align: center">
     <div class="clock" style="display: inline-block; width: 470px"></div>
