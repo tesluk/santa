@@ -19,7 +19,7 @@ var Answer = React.createClass({
                 React.createElement("h1", {className: "answer-name"},
                     React.createElement("a", {href: url, target: "_blank"}, name), " is ", type, "!"
                 ),
-                React.createElement("div", {className: "answer-picture"}, React.createElement("img", {
+                React.createElement("div", {className: "answer-picture-wrap"}, React.createElement("img", {
                     className: "answer-picture",
                     src: img,
                     alt: name
