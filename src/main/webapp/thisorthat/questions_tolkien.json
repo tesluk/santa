@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Arnew",
+    "url": "https://en.wikipedia.org/wiki/Arwen",
+    "type": 0,
+    "text": "0 is both a number and the numerical digit used to represent that number in numerals.",
+    "img": "tolkien/arnew.jpg"
+  },
+  {
+    "name": "Ativan",
+    "url": "http://www.drugs.com/ativan.html",
+    "type": 1,
+    "text": "Ativan (lorazepam) is in a group of drugs called benzodiazepines",
+    "img": "tolkien/ativan.jpg"
+  },
+  {
+    "name": "Zovirax",
+    "url": "http://www.drugs.com/zovirax.html",
+    "type": 1,
+    "text": "Zovirax (acyclovir) is an antiviral drug.",
+    "img": "tolkien/zovirax.jpg"
+  },
+  {
+    "name": "Benicar",
+    "url": "http://www.drugs.com/benicar.html",
+    "type": 1,
+    "text": "Benicar (olmesartan) is an angiotensin II receptor antagonist.",
+    "img": "tolkien/benicar.jpg"
+  },
+  {
+    "name": "Coumadin",
+    "url": "http://www.drugs.com/coumadin.html",
+    "type": 1,
+    "text": "Coumadin (warfarin) is an anticoagulant (blood thinner). Warfarin reduces the formation of blood clots.",
+    "img": "tolkien/coumadin.jpg"
+  }
+]
