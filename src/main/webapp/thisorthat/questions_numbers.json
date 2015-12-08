@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Zero",
+    "url": "https://en.wikipedia.org/wiki/0_(number)",
+    "type": 0,
+    "text": "0 is both a number and the numerical digit used to represent that number in numerals.",
+    "img": "nums/zerp.jpg"
+  },
+  {
+    "name": "2^8",
+    "url": "https://en.wikipedia.org/wiki/256_(number)",
+    "type": 0,
+    "text": "256 (two hundred [and] fifty-six, CCLVI) is the natural number following 255 and preceding 257.",
+    "img": "256.png"
+  },
+  {
+    "name": "13",
+    "url": "https://en.wikipedia.org/wiki/13_(number)",
+    "type": 0,
+    "text": "13 is the natural number following 12 and preceding 14.",
+    "img": "13.gif"
+  }
+]
