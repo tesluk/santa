@@ -2,10 +2,10 @@
 
 var Question = React.createClass({displayName: "Question",
   selectThisAnswer: function selectThisAnswer() {
-    this.props.selectAnswer(IS_THAT);
+    this.props.selectAnswer(IS_THIS);
   },
   selectThatAnswer: function selectThatAnswer() {
-    this.props.selectAnswer(IS_THIS);
+    this.props.selectAnswer(IS_THAT);
   },
   render: function() {
     return (
