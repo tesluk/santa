@@ -26,7 +26,7 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2016, 1, 22, 18, 0, 0));
+        var date = new Date(Date.UTC(2016, 0, 21, 18, 8, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000 - 2 * 60 * 60;
 
