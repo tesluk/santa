@@ -36,7 +36,7 @@
             });
         } else {
             clock = $('.clock').FlipClock(0, {
-                countdown: false
+                autoStart: false
             })
         }
 
