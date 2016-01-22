@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="content" style="text-align: center; padding: 30px">
-    <img src="http://www.stb.ua/wp-content/uploads/2015/10/640_4001.jpg">
+    <img src="http://www.tynllidiartarms.co.uk/images/valentines-day-clipart.jpg">
 </div>
 <div class="content" style="text-align: center">
     <div class="clock" style="display: inline-block; width: 470px"></div>
@@ -26,7 +26,7 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2016, 0, 21, 18, 8, 0));
+        var date = new Date(Date.UTC(2016, 1, 14, 0, 0, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000 - 2 * 60 * 60;
 
