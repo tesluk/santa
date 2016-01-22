@@ -17,7 +17,7 @@
     <img width="600px" height="600px" src="http://www.tynllidiartarms.co.uk/images/valentines-day-clipart.jpg">
 </div>
 <div class="content" style="text-align: center">
-    <div class="clock" style="display: inline-block; width: 510px"></div>
+    <div class="clock" style="display: inline-block; width: 530px"></div>
 </div>
 
 <script type="text/javascript">
