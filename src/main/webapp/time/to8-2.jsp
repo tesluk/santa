@@ -11,11 +11,10 @@
     <link rel="stylesheet" href="/js/flipclock.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/js/flipclock.js"></script>
-    <script>var x = 46336879;</script>
 </head>
 <body>
 <div class="content" style="text-align: center; padding: 30px">
-    <img width="600px" height="600px" src="/images/8mh.png">
+    <img width="600px" height="600px" src="/images/8mw.png">
 </div>
 <div class="content" style="text-align: center">
     <p>Next update in:</p>
@@ -28,7 +27,7 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2016, 2, 26, 8, 0, 0));
+        var date = new Date(Date.UTC(2016, 2, 24, 15, 0, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000 - 2 * 60 * 60;
 
