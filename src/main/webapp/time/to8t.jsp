@@ -9,13 +9,16 @@
 <html>
 <head>
     <link rel="stylesheet" href="/js/flipclock.css">
+    <link rel="stylesheet" href="/css/8m.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/js/flipclock.js"></script>
     <script>var x = 46336879;</script>
 </head>
 <body>
-<div class="content" style="text-align: center; padding: 30px">
-    <img width="600px" height="600px" src="/images/8mh.png">
+<div id="cf" class="content" style="text-align: center; padding: 30px">
+    <img class="top" width="600px" height="600px" src="/images/8mh.png">
+    <img class="bottom" width="600px" height="600px" src="/images/8ma.png">
 </div>
 <div class="content" style="text-align: center">
     <p>Next update in:</p>
