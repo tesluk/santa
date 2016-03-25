@@ -17,11 +17,12 @@
 </head>
 <body>
 <div id="cf" class="content" style="text-align: center; padding: 30px">
-    <img class="top" width="600px" height="600px" src="/images/8mh.png">
     <img class="bottom" width="600px" height="600px" src="/images/8ma.png">
+    <img class="top" width="600px" height="600px" src="/images/8mh.png">
 </div>
 <div class="content" style="text-align: center">
     <p>Next update in:</p>
+
     <div class="clock" style="display: inline-block; width: 530px"></div>
 </div>
 
