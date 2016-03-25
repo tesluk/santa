@@ -9,22 +9,16 @@
 <html>
 <head>
     <link rel="stylesheet" href="/js/flipclock.css">
-    <link rel="stylesheet" href="/css/8m.css">
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/js/flipclock.js"></script>
     <script>var x = 46336879;</script>
 </head>
 <body>
-<div id="cf" class="content" style="text-align: center; padding: 30px">
-    <a href="http://www.panoramio.com/photo/46336879">
-        <img class="bottom" width="600px" height="600px" src="/images/8ma.png">
-        <img class="top" width="600px" height="600px" src="/images/8ma-top.png">
-    </a>
+<div class="content" style="text-align: center; padding: 30px">
+    <img width="600px" height="600px" src="/images/8mh.png">
 </div>
 <div class="content" style="text-align: center">
-    <p>Be here ^ in:</p>
-
+    <p>Next update in:</p>
     <div class="clock" style="display: inline-block; width: 530px"></div>
 </div>
 
@@ -34,7 +28,7 @@
     $(document).ready(function () {
         var clock;
 
-        var date = new Date(Date.UTC(2016, 2, 26, 12, 22, 50));
+        var date = new Date(Date.UTC(2016, 2, 26, 8, 0, 0));
         var now = new Date();
         var diff = date.getTime() / 1000 - now.getTime() / 1000 - 2 * 60 * 60;
 
