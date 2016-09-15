@@ -25,7 +25,17 @@
         <servlet-name>Santa</servlet-name>
         <url-pattern>/whoismine</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>TableauCrypt</servlet-name>
+        <servlet-class>tab.os.tableau.servlet.CryptServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TableauCrypt</servlet-name>
+        <url-pattern>/tableau/crypt</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>jersey-santa-servlet</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
