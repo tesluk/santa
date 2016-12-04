@@ -13,8 +13,8 @@
 <a href="keys.jsp">I need a key</a><br>
 <a href="list.jsp">All happy users</a><br>
 <a href="regme.jsp">Add me, plz!</a><br>
-<a href="whoismine.jsp">Who is mine?</a>
-<a href="whoami.jsp">Who am I?</a>
+<a href="whoismine.jsp">Who is mine?</a><br>
+<a href="whoami.jsp">Who am I?</a><br>
 
 </body>
 </html>
