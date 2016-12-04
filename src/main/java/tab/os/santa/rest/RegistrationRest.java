@@ -2,9 +2,9 @@ package tab.os.santa.rest;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import tab.os.db.DBSession;
 import tab.os.santa.entities.HappyUser;
 import tab.os.santa.entities.ShuffleResult;
-import tab.os.db.DBSession;
 import tab.os.santa.tools.SantaCipher;
 import tab.os.santa.tools.SecretSanta;
 
@@ -106,16 +106,19 @@ public class RegistrationRest {
         StringBuilder res = new StringBuilder();
         try {
             Session session = DBSession.getSession();
-            String query = String.format("SELECT HappyUser U WHERE U.invite == %s", invite);
-            List<HappyUser> results = session.createQuery(query).list();
+            List<HappyUser> results = session.createCriteria(HappyUser.class).list();
             System.out.println("Result size: " + results.size());
 
-            if(results.isEmpty()){
-                res.append("<p>Anonymous</p>\n");
-            } else {
-                res.append(String.format("<p> %s </p>\n", results.get(0).getName()));
+            String userName = "Anonymous";
+
+            for (HappyUser u : results) {
+                if (u.getInvite().equals(invite)) {
+                    userName = u.getName();
+                }
             }
 
+            res.append(String.format("<p> %s </p>\n", userName));
+            
             return Response.ok(res.toString()).build();
         } catch (Exception e) {
             StackTraceElement[] trace = e.getStackTrace();
