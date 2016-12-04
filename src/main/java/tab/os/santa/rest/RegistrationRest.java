@@ -94,6 +94,38 @@ public class RegistrationRest {
         }
     }
 
+    @GET
+    @Path("/whoami")
+    public Response getWhoAmI() {
+        return Response.status(301).header(HttpHeaders.LOCATION, "/whoami.jsp").build();
+    }
+
+    @POST
+    @Path("/whoami")
+    public Response whoAmI(@FormParam("invite") String invite) {
+        StringBuilder res = new StringBuilder();
+        try {
+            Session session = DBSession.getSession();
+            String query = String.format("SELECT HappyUser U WHERE U.invite == %s", invite);
+            List<HappyUser> results = session.createQuery(query).list();
+            System.out.println("Result size: " + results.size());
+
+            if(results.isEmpty()){
+                res.append("<p>Anonymous</p>\n");
+            } else {
+                res.append(String.format("<p> %s </p>\n", results.get(0).getName()));
+            }
+
+            return Response.ok(res.toString()).build();
+        } catch (Exception e) {
+            StackTraceElement[] trace = e.getStackTrace();
+            StringBuilder builder = new StringBuilder();
+            for (StackTraceElement elem : trace) {
+                builder.append(elem.toString()).append("<br>\n");
+            }
+            return Response.status(400).entity("Error: " + e.getMessage() + "<br>\n" + builder.toString()).build();
+        }
+    }
 
     @GET
     @Path("/shuffle")

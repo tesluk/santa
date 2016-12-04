@@ -21,7 +21,8 @@ public class SecretSanta {
         pairs.add(new HashSet(Arrays.asList("Alexander Davydov", "Rita Davydova")));
         pairs.add(new HashSet(Arrays.asList("Andrew Tesliuk", "Tania Tesliuk")));
         pairs.add(new HashSet(Arrays.asList("Bohdan Potapskyi", "Eugenia Potapska")));
-        pairs.add(new HashSet(Arrays.asList("Olha Mykhailenko", "Serhii Skyrda")));
+        pairs.add(new HashSet(Arrays.asList("Olha Skyrda", "Serhii Skyrda")));
+        pairs.add(new HashSet(Arrays.asList("Vitalii Gergel", "Natalka Suchko")));
     }
 
     private static Random random = new Random();
