@@ -31,5 +31,7 @@
 
         <mapping class="tab.os.smart.room.entities.Tool"/>
         <mapping class="tab.os.smart.room.entities.Indication"/>
+
+        <mapping class="tab.os.yana.santa.entity.UserWithBD"/>
     </session-factory>
 </hibernate-configuration>
