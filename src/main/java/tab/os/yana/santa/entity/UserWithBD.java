@@ -80,6 +80,7 @@ import java.util.List;
 
         System.out.println(INNValidator.isValidINN("3349817717"));
         System.out.println(INNValidator.isValidCorrespondingDate("3349817717", "1991.09.18"));
+        System.out.println(INNValidator.isValidCorrespondingDate("3513411046", "1996.03.11"));
     }
 
 }

@@ -52,7 +52,8 @@ public class INNValidator {
             e.printStackTrace();
         }
         long res = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-        return days == res;
+        System.out.println(days + " - " + res);
+        return (days - res < 3) && (days - res > -3);
     }
 
 }
