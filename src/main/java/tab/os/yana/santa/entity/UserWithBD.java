@@ -25,6 +25,8 @@ import java.util.List;
 
     @Column private String bd;
 
+    @Column private int group;
+
     public long getId() {
         return id;
     }
