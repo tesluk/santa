@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<img src="images/papers.jpg">
+<img src="/images/papers.jpg">
 <br>
-<a href="radik/whoami.jsp">Who am I?</a><br>
+<a href="whoami.jsp">Who am I?</a><br>
 
 </body>
 </html>

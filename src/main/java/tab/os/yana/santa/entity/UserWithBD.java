@@ -1,5 +1,7 @@
 package tab.os.yana.santa.entity;
 
+import org.hibernate.Session;
+import tab.os.db.DBSession;
 import tab.os.yana.santa.INNValidator;
 import tab.os.yana.santa.service.InnService;
 
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author andrew.tesliuk
@@ -47,6 +50,23 @@ import java.util.Date;
     public UserWithBD setBd(String bd) {
         this.bd = bd;
         return this;
+    }
+
+    public static UserWithBD getUserByINN(String inn){
+        if(!INNValidator.isValidINN(inn)){
+            throw new IllegalArgumentException("Invalid inn");
+        }
+
+        Session session = DBSession.getSession();
+        List<UserWithBD> list = session.createCriteria(UserWithBD.class).list();
+
+        for(UserWithBD u : list){
+            if(INNValidator.isValidCorrespondingDate(inn, u.getBd())){
+                return u;
+            }
+        }
+
+        return null;
     }
 
     public static void main(String[] args) throws ParseException, IOException {

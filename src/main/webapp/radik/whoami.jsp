@@ -12,9 +12,10 @@
 </head>
 <body>
 
-<img src="images/papers.jpg">
-<br>
-<a href="radik/whoami.jsp">Who am I?</a><br>
+<form action="/radik/whoami" method="post">
+    <input type="text" name="inn" placeholder="Your inn">
+    <input type="submit">
+</form>
 
 </body>
 </html>
