@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by Tab on 10.12.2016.
  */
-
+@Entity
 @Table
 public class RadikLog {
 

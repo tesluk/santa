@@ -29,8 +29,8 @@
         <mapping class="tab.os.santa.entities.HappyUser"/>
         <mapping class="tab.os.santa.entities.ShuffleResult"/>
 
-        <mapping class="tab.os.smart.room.entities.Tool"/>
-        <mapping class="tab.os.smart.room.entities.Indication"/>
+        <!--<mapping class="tab.os.smart.room.entities.Tool"/>-->
+        <!--<mapping class="tab.os.smart.room.entities.Indication"/>-->
 
         <mapping class="tab.os.yana.santa.entity.UserWithBD"/>
         <mapping class="tab.os.yana.santa.entity.ShufflePair"/>

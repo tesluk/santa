@@ -11,16 +11,20 @@ import java.util.Random;
 /**
  * Created by Tab on 10.12.2016.
  */
+@Entity
 @Table
 public class ShufflePair {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
-    @Column
+    @OneToOne
     UserWithBD who;
-    @Column
+    @OneToOne
     UserWithBD to;
+
+    public ShufflePair() {
+    }
 
     public ShufflePair(UserWithBD who, UserWithBD to) {
         this.who = who;
@@ -36,18 +40,22 @@ public class ShufflePair {
     }
 
     public static void generate() {
+        RadikLog.addMsg("Start");
+
         Random r = new Random();
         Session session = DBSession.getSession();
 
         List<UserWithBD> list = session.createCriteria(UserWithBD.class).list();
         List<UserWithBD> users = new ArrayList<>();
 
+        RadikLog.addMsg(String.format("Users found %s", list.size()));
+
         for (UserWithBD u : list) {
-            if (u.getGroup() < 0) {
+            if (u.getGroup() >= 0) {
                 users.add(u);
             }
         }
-
+        RadikLog.addMsg(String.format("Users after filter %s", users.size()));
         boolean valid = false;
         List<ShufflePair> res = null;
         while (!valid) {
@@ -63,9 +71,11 @@ public class ShufflePair {
             valid = validate(res);
         }
 
+        session.beginTransaction();
         for (ShufflePair p : res) {
             session.save(p);
         }
+        session.getTransaction().commit();
     }
 
     private static boolean validate(List<ShufflePair> pairs) {
@@ -79,5 +89,4 @@ public class ShufflePair {
         }
         return true;
     }
-
 }

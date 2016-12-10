@@ -34,13 +34,14 @@ public class RegistrationRest {
 
     @POST
     @Path("/shuffle")
-    public Response shuffle(@FormParam("password") String pass, @FormParam("generate") boolean generate) throws URISyntaxException {
-        RadikLog.addMsg("Test");
+    public Response shuffle(@FormParam("password") String pass, @FormParam("generate") String generate) throws URISyntaxException {
+        RadikLog.addMsg("Test " + generate);
         if (!pass.equals("t14v0k3")) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
 
-        if (generate) {
+        if (generate != null) {
+            RadikLog.addMsg("Generation");
             ShufflePair.generate();
         }
 
