@@ -34,5 +34,6 @@
 
         <mapping class="tab.os.yana.santa.entity.UserWithBD"/>
         <mapping class="tab.os.yana.santa.entity.ShufflePair"/>
+        <mapping class="tab.os.yana.santa.entity.RadikLog"/>
     </session-factory>
 </hibernate-configuration>
