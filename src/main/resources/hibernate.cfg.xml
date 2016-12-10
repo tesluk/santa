@@ -33,5 +33,6 @@
         <mapping class="tab.os.smart.room.entities.Indication"/>
 
         <mapping class="tab.os.yana.santa.entity.UserWithBD"/>
+        <mapping class="tab.os.yana.santa.entity.ShufflePair"/>
     </session-factory>
 </hibernate-configuration>

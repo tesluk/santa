@@ -54,6 +54,10 @@ import java.util.List;
         return this;
     }
 
+    public int getGroup() {
+        return group;
+    }
+
     public static UserWithBD getUserByINN(String inn){
         if(!INNValidator.isValidINN(inn)){
             throw new IllegalArgumentException("Invalid inn");
