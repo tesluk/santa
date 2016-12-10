@@ -75,16 +75,26 @@ import java.util.List;
         return null;
     }
 
-    public static void main(String[] args) throws ParseException, IOException {
-        System.out.println(START);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+        UserWithBD that = (UserWithBD) o;
 
-        System.out.println(InnService.analizeINN("3349817717"));
+        if (id != that.id) return false;
+        if (group != that.group) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        return !(bd != null ? !bd.equals(that.bd) : that.bd != null);
 
-        System.out.println(INNValidator.isValidINN("3349817717"));
-        System.out.println(INNValidator.isValidCorrespondingDate("3349817717", "1991.09.18"));
-        System.out.println(INNValidator.isValidCorrespondingDate("3513411046", "1996.03.11"));
     }
 
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (bd != null ? bd.hashCode() : 0);
+        result = 31 * result + group;
+        return result;
+    }
 }
