@@ -1,5 +1,6 @@
 package tab.os.yana.santa.rest;
 
+import tab.os.yana.santa.entity.ShufflePair;
 import tab.os.yana.santa.entity.UserWithBD;
 
 import javax.ws.rs.FormParam;
@@ -38,7 +39,7 @@ public class RegistrationRest {
         }
 
         if (generate) {
-            // generate pairs
+            ShufflePair.generate();
         }
 
         return Response.temporaryRedirect(new URI("/rad/shuffle.jsp")).build();
