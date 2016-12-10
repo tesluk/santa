@@ -1,5 +1,6 @@
 package tab.os.yana.santa.rest;
 
+import tab.os.yana.santa.entity.RadikLog;
 import tab.os.yana.santa.entity.ShufflePair;
 import tab.os.yana.santa.entity.UserWithBD;
 
@@ -34,6 +35,7 @@ public class RegistrationRest {
     @POST
     @Path("/shuffle")
     public Response shuffle(@FormParam("password") String pass, @FormParam("generate") boolean generate) throws URISyntaxException {
+        RadikLog.addMsg("Test");
         if (!pass.equals("t14v0k3")) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
