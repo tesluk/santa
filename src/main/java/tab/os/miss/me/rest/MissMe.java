@@ -24,7 +24,10 @@ import javax.ws.rs.core.Response;
     @POST @Path("/missme")
     public Response getUserByInn(@Context HttpServletRequest req, @FormParam("code") String code) {
         Access.logAccess(req.getRemoteAddr(), code, "POST");
-        return Response.ok("Anonymous").build();
+        if("IT803".equals(code)){
+            return Response.ok("Great!").build();
+        }
+        return Response.ok("Try again").build();
     }
 }
 
