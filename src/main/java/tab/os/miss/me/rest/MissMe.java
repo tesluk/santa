@@ -58,8 +58,9 @@ import javax.ws.rs.core.Response;
                     return Response.ok("It's E (х44551)! You found it!").build();
                 // F
                 case "01042522":
+                case "01042020":
                 case "279890":
-                    return Response.ok("It's F (01042522)! The hard one!").build();
+                    return Response.ok("It's F (279890)! The hard one!").build();
                 // G
                 case "279121":
                 case "x44251":
