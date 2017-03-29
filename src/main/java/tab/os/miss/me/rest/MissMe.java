@@ -27,40 +27,53 @@ import javax.ws.rs.core.Response;
 
         if (code != null) {
             code = code.toLowerCase();
-            switch (code) {
-                case "it803":
-                    return Response.ok("Great!").build();
 
+            if (code.equals("it803")) {
+                return Response.ok("Great!").build();
+            }
+
+            if(!code.matches("x[0-9a-f]+") && !code.matches("\\d+")){
+                return Response.ok("Invalid format. Use natural numbers. Try Again").build();
+            }
+
+            switch (code) {
                 // A
-                case "1030":
-                    return Response.ok("It's A! Yeah!").build();
+                case "512":
+                case "x200":
+                    return Response.ok("It's A (512)! Yeah!").build();
                 // B
                 case "x1F520":
-                    return Response.ok("It's B! Cool!").build();
+                case "128288":
+                    return Response.ok("It's B (x1F520)! Cool!").build();
                 // C
                 case "х44552":
-                    return Response.ok("It's C! Good job!").build();
+                    return Response.ok("It's C (х44552)! Good job!").build();
                 // D
                 case "x44255":
-                    return Response.ok("It's D! Awesome!").build();
+                case "279125":
+                    return Response.ok("It's D (x44255)! Awesome!").build();
                 // E
                 case "х44551":
-                    return Response.ok("It's E! You found it!").build();
+                case "279889":
+                    return Response.ok("It's E (х44551)! You found it!").build();
                 // F
                 case "01042522":
-                    return Response.ok("It's F! The hard one!").build();
+                case "279890":
+                    return Response.ok("It's F (01042522)! The hard one!").build();
                 // G
                 case "279121":
-                    return Response.ok("It's G! Magic!").build();
+                case "x44251":
+                    return Response.ok("It's G (279121)! Magic!").build();
                 // H
                 case "278565":
-                    return Response.ok("It's H! Good news!").build();
+                case "x44025":
+                    return Response.ok("It's H (278565)! Good news!").build();
                 // I
                 case "72142":
-                    return Response.ok("It's I! You rock!").build();
+                case "262146":
+                    return Response.ok("It's I (262146)! You rock!").build();
             }
-        }
-        return Response.ok("Try again").build();
+        } return Response.ok("Try again").build();
     }
 }
 
