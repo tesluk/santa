@@ -42,7 +42,7 @@ import javax.ws.rs.core.Response;
                 case "x200":
                     return Response.ok("It's A (512)! Yeah!").build();
                 // B
-                case "x1F520":
+                case "x1f520":
                 case "128288":
                     return Response.ok("It's B (x1F520)! Cool!").build();
                 // C
