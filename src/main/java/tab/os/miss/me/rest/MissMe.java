@@ -46,16 +46,16 @@ import javax.ws.rs.core.Response;
                 case "128288":
                     return Response.ok("It's B (x1F520)! Cool!").build();
                 // C
-                case "х44552":
-                    return Response.ok("It's C (х44552)! Good job!").build();
+                case "x44552":
+                    return Response.ok("It's C (x44552)! Good job!").build();
                 // D
                 case "x44255":
                 case "279125":
                     return Response.ok("It's D (x44255)! Awesome!").build();
                 // E
-                case "х44551":
+                case "x44551":
                 case "279889":
-                    return Response.ok("It's E (х44551)! You found it!").build();
+                    return Response.ok("It's E (x44551)! You found it!").build();
                 // F
                 case "01042522":
                 case "01042020":
