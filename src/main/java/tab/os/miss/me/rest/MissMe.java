@@ -29,7 +29,7 @@ import javax.ws.rs.core.Response;
             code = code.toLowerCase();
 
             if (code.equals("it803")) {
-                return Response.status(301).header(HttpHeaders.LOCATION, "/miss/me.jsp").build();
+                return Response.status(301).header(HttpHeaders.LOCATION, "/miss/great.jsp").build();
             }
 
             if(!code.matches("x[0-9a-f]+") && !code.matches("\\d+")){
